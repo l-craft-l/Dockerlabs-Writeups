@@ -1,9 +1,16 @@
+![Screenshot](/medium/stranger/Images/machine.png)
+
 Difficulty: **medium**
+
 Made by: **kaikoperez**
 
 ---
 # Steps to pwn 🥽
 
+* 👁️‍🗨️ [Reconnaissance](#reconnaissance)
+* 🔍 [Enumeration](#enumeration)
+* 🪓 [Exploitation](#exploitation)
+* 🚩 [Privilege Escalation](#privilege-escalation)
 
 ---
 
@@ -117,7 +124,7 @@ http://172.17.0.2 [200 OK] Apache[2.4.58], Country[RESERVED][ZZ], HTML5, HTTPSer
 
 We don't see so much info here, we can look more in the browser.
 
-![[Pasted image 20251104205021.png]]
+![Screenshot](/medium/stranger/Images/image1.png)
 
 This it seems like a welcome from an user in this case is **mwheeler**, we can add this user in a txt file, to register more users that we can found later.
 
@@ -126,7 +133,7 @@ We can do some Enumeration on this website, to find out what possible others pat
 ---
 # Enumeration 
 
-![[Pasted image 20251104205429.png]]
+![Screenshot](/medium/stranger/Images/image2.png)
 
 With gobuster we can enumerate, and in this case we are gonna make a enumeration of directories (dir)
 
@@ -140,7 +147,7 @@ With gobuster we can enumerate, and in this case we are gonna make a enumeration
 
 When the enumeration concludes, we can notice that gobuster report us that there is a directory in the website (strange). We can take a look in the browser.
 
-![[Pasted image 20251104212358.png]]
+![Screenshot](/medium/stranger/Images/image3.png)
 
 Immediately we can notice a password for a encrypted file, the pass is **iloveu** also we can add this types of users we did before with the user mwheeler.
 
@@ -152,7 +159,7 @@ We can look deeper on the page, the code of the page, keep enumerating and we do
 
 if you want to see more about these keywords that we capture are gonna look like this:
 
-![[Pasted image 20251104213011.png]]
+![Screenshot](/medium/stranger/Images/image4.png)
 
 ---
 # Exploitation
@@ -178,7 +185,7 @@ ftp://172.17.0.2 <- With this argument hydra are going to attack this port ftp (
 
 Once done this, we wait if we have success...
  
-![[Pasted image 20251104213312.png]]
+![Screenshot](/medium/stranger/Images/image5.png)
 
 And... it works! we found that are a valid user **mwheeler** and a valid password for this user **demogorgon**
 
@@ -245,21 +252,21 @@ Now, we are going to attack ssh with hydra, just the target are going to change 
 
 ssh://172.17.0.2
 
-![[Pasted image 20251104215314.png]]
+![Screenshot](/medium/stranger/Images/image6.png)
 
 And also we got success! it seems this user have password reuse.
 
 We are going to login through ssh with this user.
 
-![[Pasted image 20251104215719.png]]
+![Screenshot](/medium/stranger/Images/image7.png)
 
 After a long enumeration... in the directory of the website **/var/www/html** and we go to **/secret/** we can see something interesting here in this file:
 
-![[Pasted image 20251104220153.png]]
+![Screenshot](/medium/stranger/Images/image8.png)
 
 This a hint, we can brute force the user admin with the dictionary of rockyou, we can try it if it works:
 
-![[Pasted image 20251104220448.png]]
+![Screenshot](/medium/stranger/Images/image9.png)
 
 we got success, we can try if this password with the user admin also reuses through ssh.
 
@@ -280,13 +287,13 @@ If we see this type of weird shell, we can type the **bash** command and we will
 ---
 # Privilege Escalation
 
-![[Pasted image 20251104221118.png]]
+![Screenshot](/medium/stranger/Images/image10.png)
 
 And we do some lateral movement to this user admin.
 
 And now we can try the **sudo -l** command now and we can see this:
 
-![[Pasted image 20251104221401.png]]
+![Screenshot](/medium/stranger/Images/image11.png)
 
 It seems we can escalate privileges as any user of the system (ALL), including the user root, and we can use any command to the privilege escalation (ALL)
  
@@ -296,6 +303,6 @@ Then we can execute the next command to get the shell of the user root:
 
 this will execute the user root, the shell of bash, then the privilige escalation will be a success:
 
-![[Pasted image 20251104221750.png]]
+![Screenshot](/medium/stranger/Images/image12.png)
 
 We got the root flag ***pwned!...***

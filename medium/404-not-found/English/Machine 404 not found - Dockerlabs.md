@@ -1,5 +1,18 @@
-Difficulty: medium
-Made by: dise0
+![Screenshot](/medium/404-not-found/images/machine.png)
+
+Difficulty: **medium**
+
+Made by: **dise0**
+
+# Steps to pwn 🥽
+
+* 👁️‍🗨️ [Reconnaissance](#reconnaissance)
+* 🔍 [Enumeration](#enumeration)
+* 🪓 [Exploitation](#exploitation)
+* 🚩 [Privilege Escalation](#privilege-escalation)
+
+---
+
 
 Once the machine is up, I make sure the machine is really active.
 
@@ -16,6 +29,10 @@ PING 172.17.0.2 (172.17.0.2) 56(84) bytes of data.
 rtt min/avg/max/mdev = 0.131/0.146/0.178/0.022 ms
 
 ```
+
+---
+
+# Reconnaissance
 
 Okay now, im going to make a nmap scan to see what ports are open.
 
@@ -85,13 +102,16 @@ http://404-not-found.hl/ [200 OK] Apache[2.4.58], Country[RESERVED][ZZ], HTML5, 
 
 It seems this website use apache, and nothing more interesting, I am going to see what is on the browser.
 
-![[Pasted image 20251101195735.png]]
+---
 
+# Enumeration
+
+![Screenshot](/medium/404-not-found/images/image1.png)
 We see this on the website so im going to see more on detail what's inside of this.
 
 First of all, I do some enumeration on the website, but we see nothing interesting, only the button that it says **Participate Now!** then I click on it, and we this:
 
-![[Pasted image 20251101200356.png]]
+![Screenshot](/medium/404-not-found/images/image2.png)
 
 We see here a **secret key**, it seems that is encoded in base64, im going to decode it to see what is inside.
 
@@ -105,7 +125,7 @@ Translated it says **"What are you doing? Look in the URL"** basically this a so
 
 Im going to do some **fuzzing**, to see some possibly subdomains that are on the website.
 
-![[Pasted image 20251101201722.png]]
+![Screenshot](/medium/404-not-found/images/image3.png)
 
 We see a result of **"info"** this a good sign, we make sure this is on the file of **/etc/hosts** 
 
@@ -115,7 +135,11 @@ We see a result of **"info"** this a good sign, we make sure this is on the file
 
 Once saved this, we go again to the browser to see again the website.
 
-![[Pasted image 20251101202038.png]]
+![Screenshot](/medium/404-not-found/images/image4.png)
+
+---
+
+# Exploitation
 
 We see a login page here. I try to do some sql injections, but it seems it doesn't work, so I see the content of the website and we can see this at the end of the content:
 
@@ -131,7 +155,7 @@ And in the password field you can type anything.
 
 The injection was successful, we can see this now:
 
-![[Pasted image 20251101210112.png]]
+![Screenshot](/medium/404-not-found/images/image5.png)
 
 We see an admin panel here, and also we got some credentials that is:
 
@@ -140,7 +164,7 @@ We see an admin panel here, and also we got some credentials that is:
 
 We can try it this credentials through ssh, the login is successful.
 
-![[Pasted image 20251101210523.png]]
+![Screenshot](/medium/404-not-found/images/image6.png)
 
 Once inside I do **"sudo -l"**  command, and we can see this:
 
@@ -181,6 +205,10 @@ In the calculator I don't know what the symbol is used for "!" followed by somet
 ```
 
 Another hint, for now this not help to much.
+
+---
+
+# Privilege Escalation
 
 Im going to take a look what it's on inside of the login page. The content is on the **/info/** directory.
 
@@ -252,6 +280,6 @@ What is rooteable
 
 Somehow, I try **rooteable** on the password of the user root, and it works lol.
 
-![[Pasted image 20251101214537.png]]
+![Screenshot](/medium/404-not-found/images/image7.png)
 
 We got the flag of root. ***...Pwned!...***
