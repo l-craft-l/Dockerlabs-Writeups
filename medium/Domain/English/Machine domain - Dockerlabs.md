@@ -1,9 +1,16 @@
+![Screenshot](/medium/Domain/Images/machine.png)
 
 Difficulty: **medium**
+
 Made by: **el pinguino de mario**
 
 ---
-# Steps to pwn 
+# Steps to pwn 🥽
+
+* 👁️‍🗨️ [Reconnaissance](#reconnaissance)
+* 🔍 [Enumeration](#enumeration)
+* 🪓 [Exploitation](#exploitation)
+* 🚩 [Privilege Escalation](#privilege-escalation)
 
 ---
 
@@ -117,12 +124,12 @@ http://172.17.0.2 [200 OK] Apache[2.4.52], Country[RESERVED][ZZ], HTML5, HTTPSer
 
 We not see not too much here, we can see the website use apache and that's it, let's take a look on the browser.
 
-![[Pasted image 20251105214222.png]]
+![Screenshot](/medium/Domain/Images/image1.png)
 
 We can see this, this show us like a summary of what is samba. And nothing more, we can do some enumeration to this website but we got nothing.
 
 ---
-# Reconnaissance
+# Enumeration
 
 We can use a tool that's is **enum4linux**, this tool can enumerate a system of linux, like a overall, it can enumerate users from the system, workspaces and a lot more.
 
@@ -361,13 +368,13 @@ Let's execute the next command:
 
 Now lets see what happen.
 
-![[Pasted image 20251105222202.png]]
+![Screenshot](/medium/Domain/Images/image2.png)
 
 And we got success! we found the password of the user bob, the pass is **star** 
 
 We are going to try if we can login in with this user.
 
-![[Pasted image 20251105223207.png]]
+![Screenshot](/medium/Domain/Images/image3.png)
 
 The login works, and also we are into the directory of html.
 
@@ -375,7 +382,7 @@ We get the file of index.html, this means we get the code of the website we see 
 
 And we can also upload a file here on smb, we can try to make a reverse shell with a file, in this case we are going to use a php file.
 
-![[Pasted image 20251105224454.png]]
+![Screenshot](/medium/Domain/Images/image4.png)
 
 This code what it does is it get through the system the command line, this means we can use the typical commands we use in a linux system.
 
@@ -383,7 +390,7 @@ This code what it does is it get through the system the command line, this means
 
 Then we save the file and we upload this in the directory of html with smb, we can use the command **put** to upload this file.
 
-![[Pasted image 20251105225332.png]]
+![Screenshot](/medium/Domain/Images/image5.png)
 
 Now when the file uploads, with the browser are going to visit again the website, but in the next path:
 
@@ -391,13 +398,13 @@ Now when the file uploads, with the browser are going to visit again the website
 
 Then we see this:
 
-![[Pasted image 20251105225941.png]]
+![Screenshot](/medium/Domain/Images/image6.png)
 
 This error occurs  because the request we made through the browser it's not correct, because it needs the parameter **cmd**, something like this must be the request:
 
 - http://172.17.0.2/shell.php?cmd={cmd_here!}
 
-![[Pasted image 20251105230904.png]]
+![Screenshot](/medium/Domain/Images/image7.png)
 
 finally we get a **web shell**, and also we can make a reverse shell like this:
 
@@ -486,7 +493,7 @@ www-data@7f02c47512a2:/var/www/html$ export TERM=xterm
 
 And one last thing, if we notice the display of the terminal is very tiny!
 
-![[Pasted image 20251106000748.png]]
+![Screenshot](/medium/Domain/Images/image8.png)
 
 We can adjust this to be more bigger with the next command:
 
@@ -495,8 +502,6 @@ stty rows {num} columns {num}
 ```
 
 and finally it looks way better!
-
-![[Pasted image 20251106001255.png]]
 
 ---
 
@@ -554,12 +559,12 @@ bob@7f02c47512a2:/usr/bin$ ./nano /etc/shadow
 
 With this we execute the nano editor and this opens the shadow file and we can see this:
 
-![[Pasted image 20251106003435.png]]
+![Screenshot](/medium/Domain/Images/image9.png)
 
 Once we delete that symbol, we save the file with CTRL + S and we exit of nano.
 
 Now we are going to change to the user root, and let's see if the exploitation work.
 
-![[Pasted image 20251106003841.png]]
+![Screenshot](/medium/Domain/Images/image10.png)
 
 Now we are the user root ***...Pwned!...*** 
