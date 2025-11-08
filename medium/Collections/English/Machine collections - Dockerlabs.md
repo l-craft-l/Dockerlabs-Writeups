@@ -1,8 +1,17 @@
+![Screenshot](/medium/Collections/Images/machine.png)
+
 Difficulty: **medium**
+
 Made by: **El pinguino de mario**
 
 ---
-# Steps to pwn
+# Steps to pwn 🥽
+
+* 👁️‍🗨️ [Reconnaissance](#reconnaissance)
+* 🔍 [Enumeration](#enumeration)
+* 🪓 [Exploitation](#exploitation)
+* 🚩 [Privilege Escalation](#privilege-escalation)
+
 ---
 
 First of all, we make sure the machine is up, we can check it out quickly with the command **ping**
@@ -178,11 +187,11 @@ We can enumerate through the website if we can found something interesting on it
 
 **-x** <- With this argument we can also add a extension per each payload, you can also enumerate this type of extensions like: php, py, txt, js, html and much more. But if you add more extentions it will take more longer to finish the enumeration.
 
-![[Pasted image 20251106231210.png]]
+![Screenshot](/medium/Collections/Images/image1.png)
 
 And we can see here the directory **/wordpress** it seems this website uses wordpress, let's take a look with the browser.
 
-![[Pasted image 20251106232718.png]]
+![Screenshot](/medium/Collections/Images/image2.png)
 
 It seems that the website it's broken, let's take a look into the source code of the page.
 
@@ -247,13 +256,13 @@ and we can begin the **exploitation** phase
 
 we go here to the next part:
 
-![[Pasted image 20251107203953.png]]
+![Screenshot](/medium/Collections/Images/image3.png)
 
-![[Pasted image 20251107204236.png]]
+![Screenshot](/medium/Collections/Images/image4.png)
 
 And we select the **twenty twenty-three** theme and we click select.
 
-![[Pasted image 20251107204438.png]]
+![Screenshot](/medium/Collections/Images/image5.png)
 
 We click **patterns**, and I personally use **hidden-404.php**, to insert the next code:
 
@@ -274,7 +283,7 @@ http://collections.dl/wordpress/wp-content/themes/twentytwentythree/patterns/hid
 
 and we see this:
 
-![[Pasted image 20251107210356.png]]
+![Screenshot](/medium/Collections/Images/image6.png)
 
 this is because we make the request incorrectly, then we do the next request:
 
@@ -284,7 +293,7 @@ hidden-404.php?cmd=whoami
 
 and we can see this:
 
-![[Pasted image 20251107211418.png]]
+![Screenshot](/medium/Collections/Images/image7.png)
 
 then we can make a **reverse shell** with the next one liner:
 
