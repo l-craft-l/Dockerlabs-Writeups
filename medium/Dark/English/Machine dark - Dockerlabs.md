@@ -1,10 +1,17 @@
+![Screenshot](/medium/Dark/Images/machine.png)
 
 Difficulty: **medium**
 
 Made by: **makak77**
 
 ---
-# Steps to pwn
+# Steps to pwn 🥽
+
+* 👁️ [Reconnaissance](#reconnaissance)
+* 🔍 [Enumeration](#enumeration)
+* 🔄 [Pivoting](#pivoting)
+* 🪓 [Exploitation](#exploitation)
+* 🚩 [Privilege Escalation](#privilege-escalation)
 
 ---
 
@@ -116,17 +123,17 @@ http://10.10.10.2 [200 OK] Apache[2.4.59], Country[RESERVED][ZZ], HTML5, HTTPSer
 
 We can see this, uses apache but nothing else interesting, we can take a look to the website with the browser.
 
-![[Pasted image 20251108124803.png]]
+![Screenshot](/medium/Dark/Images/image1.png)
 
 We see this, translated it says **"Enter an url"** we can try if it's vulnerable to SQLI, XSS, but we got nothing.
 
 It seems me can enter an url from any website, we can try to do it with http://example.com
 
-![[Pasted image 20251108125531.png]]
+![Screenshot](/medium/Dark/Images/image2.png)
 
 We got the page from the example.com, we can also try if it also get's the page from **YouTube.**
 
-![[Pasted image 20251108130102.png]]
+![Screenshot](/medium/Dark/Images/image3.png)
 
 And it works too, but nothing else interesting, we can try enumerate possible directories with **gobuster**
 
@@ -145,21 +152,21 @@ And it works too, but nothing else interesting, we can try enumerate possible di
 
 And we can see this:
 
-![[Pasted image 20251108131255.png]]
+![Screenshot](/medium/Dark/Images/image4.png)
 
 We get a path **/info** let's take a look with the browser.
 
-![[Pasted image 20251108131731.png]]
+![Screenshot](/medium/Dark/Images/image5.png)
 
 We got a lot of information here, we can see a possible user **Toni** and another website from the ip address **20.20.20.3**, let's take a look to the website with the browser.
 
 but we can notice, this IP address we can't access into, we can try from the another website from the ip address **10.10.10.2** if we can see the other page (20.20.20.3)
 
-![[Pasted image 20251108132659.png]]
+![Screenshot](/medium/Dark/Images/image6.png)
 
 And we can see this, it's very important this information, because it seems the IP 10.10.10.2 and the other IP 20.20.20.3 are in the same network, this means this IP addresses are in a local network that we can't see into.
 
-![[Pasted image 20251108134258.png]]
+![Screenshot](/medium/Dark/Images/image7.png)
 
 We can see a local network between these 2 ip address, Only the attacker can see the 10.10.10.2 machine, and only this machine can see the 20.20.20.3 machine.
 
@@ -212,7 +219,7 @@ ssh://10.10.10.2 <- With this argument hydra are going to attack this port ssh (
 
 And finally we can see this:
 
-![[Pasted image 20251108141554.png]]
+![Screenshot](/medium/Dark/Images/image8.png)
 
 We got the password of the user **Toni**, his password is **banana**. then we login with ssh.
 
@@ -274,7 +281,7 @@ Now the fun begins, we can begin the **pivoting** phase.
 
 We can try to make an reverse shell through this machine to our attacker machine, but remember has his own local network, we can make a tunnel with **chisel** to travel the traffic from this machine to the attacker machine.
 
-![[Pasted image 20251108153243.png]]
+![Screenshot](/medium/Dark/Images/image9.png)
 
 To better understand this concept we are going to do it.
 
@@ -478,7 +485,7 @@ We get the content from the passwd file then we modify the content from the pass
 
 But remember that this machine are connected to the 1st machine (10.10.10.2), so we are putting this file to this machine.
 
-![[Pasted image 20251108164923.png]]
+![Screenshot](/medium/Dark/Images/image10.png)
 
 Now we save this file as **passwd**, and now we make a server with php from the 1st machine.
 
