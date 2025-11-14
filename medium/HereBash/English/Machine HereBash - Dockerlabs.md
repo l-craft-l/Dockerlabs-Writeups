@@ -1,8 +1,19 @@
+![Screenshot](/medium/HereBash/Images/machine.png)
 
 Difficulty: **medium**
+
 Made by: **firstatack**
 
-FIrst of all, we make sure the machine is up, the command **ping** can do this.
+# Steps to pwn 🥽
+
+* 👁️ [Reconnaissance](#reconnaissance)
+* 🔍 [Enumeration](#enumeration)
+* 🪓 [Exploitation](#exploitation)
+* 🚩 [Privilege Escalation](#privilege-escalation)
+
+---
+
+First of all, we make sure the machine is up, the command **ping** can do this.
 
 ```
 ┌──(craft㉿kali)-[~/challenges/dockerlabs/medio/herebash]
@@ -122,7 +133,7 @@ And now we can start the phase of **enumeration**.
 
 This is what we see on the page:
 
-![[Pasted image 20251113174038.png]]
+![Screenshot](/medium/HereBash/Images/image1.png)
 
 Translated this it says: **A good name is also important as the method**.
 
@@ -132,15 +143,15 @@ Then I try to go to the **/spongebob** directory.
 
 And we can see this:
 
-![[Pasted image 20251113175110.png]]
+![Screenshot](/medium/HereBash/Images/image2.png)
 
 Let's see what is inside of the directory **/upload**.
 
-![[Pasted image 20251113175248.png]]
+![Screenshot](/medium/HereBash/Images/image3.png)
 
 It seems an image, let's take a look of this picture.
 
-![[Pasted image 20251113175359.png]]
+![Screenshot](/medium/HereBash/Images/image4.png)
 
 Let's download it, a picture can hide some type of information in it, this technique is called **stenography**.
 
