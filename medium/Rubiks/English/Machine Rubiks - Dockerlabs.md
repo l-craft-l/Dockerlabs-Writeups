@@ -1,10 +1,17 @@
+![Screenshot](/medium/Rubiks/Images/machine.png)
 
 Difficulty: **medium**
 
 Made by: **luisillo_o**
 
 ---
-# Steps to pwn
+# Steps to pwn 🥽
+
+* 👁️‍🗨️ [Reconnaissance](#reconnaissance)
+* 🔍 [Enumeration](#enumeration)
+* 🪓 [Exploitation](#exploitation)
+* 🚩 [Privilege Escalation](#privilege-escalation)
+
 ---
 
 First we make sure the machine is really up, we make sure with a command that is **ping**.
@@ -118,7 +125,7 @@ http://rubikcube.dl [200 OK] Apache[2.4.58], Bootstrap[4.5.2], Country[RESERVED]
 
 We can see that uses **Bootstrap** and also **apache**, but nothing interesting, let's take a look with the browser.
 
-![[Pasted image 20251109205959.png]]
+![Screenshot](/medium/Rubiks/Images/image1.png)
 
 It seems a shop here, we can see other sections from the website but nothing interesting, now we can start the **enumeration** phase.
 
@@ -142,15 +149,15 @@ We can enumerate this website with **gobuster** to know what other possible dire
 
 And we can see this:
 
-![[Pasted image 20251109210425.png]]
+![Screenshot](/medium/Rubiks/Images/image2.png)
 
 We can see another directory, let's take a look with the browser.
 
-![[Pasted image 20251109210521.png]]
+![Screenshot](/medium/Rubiks/Images/image3.png)
 
 We can see like a admin panel here, we can do see really nothing here. But, we can see in the part of **"configurations"** this:
 
-![[Pasted image 20251109210655.png]]
+![Screenshot](/medium/Rubiks/Images/image4.png)
 
 We can see something interesting here, a **console**, let's click on it...
 
@@ -162,7 +169,7 @@ http://rubikcube.dl/administration/myconsole.php
 
 And we see this:
 
-![[Pasted image 20251109211116.png]]
+![Screenshot](/medium/Rubiks/Images/image5.png)
 
 We see a console here, but it says the website the command to execute needs to be codified, okay let's try to codify the command **whoami** with **base64**
 
@@ -186,7 +193,7 @@ NFSAU===
 
 Now let's put the output to the console and let's execute again...
 
-![[Pasted image 20251109211753.png]]
+![Screenshot](/medium/Rubiks/Images/image6.png)
 
 And we can execute commands to the machine! we can try to make a script with bash to make this more easy and fast to type commands on the website and make the commands be already encoded.
 
@@ -355,13 +362,13 @@ And yes! the test file are in the target machine!
 
 this it means we can do **unrestricted file upload vulnerability**.
 
-This occurs when a web application allows users to upload files without proper validation or restrictions, enabling an attacker to upload malicious files such as scripts (e.g., PHP files) that can be executed on the server. If the uploaded file is placed in a directory accessible via the web and the server is configured to execute scripts in that directory, the attacker can gain remote code execution, potentially leading to full system compromise.
+This occurs when a web application allows users to upload files without proper validation or restrictions, enabling an attacker to upload malicious files such as scripts (e.g., PHP files) that can be executed on the server. If the uploaded file is placed in a directory accessible via the web and the server is configured to execute scripts in that directory, the attacker can gain remote code execution, potentially leading to full system compromise.
 
 Then we can make a php file to make a reverse shell from the target machine to our attacker machine.
 
 The content from our php file is this:
 
-![[Pasted image 20251109221423.png]]
+![Screenshot](/medium/Rubiks/Images/image7.png)
 
 This php file are made by **pentestmonkey**
 
@@ -715,4 +722,3 @@ root
 ```
 
 Now we are root ***...pwned!...***
-
