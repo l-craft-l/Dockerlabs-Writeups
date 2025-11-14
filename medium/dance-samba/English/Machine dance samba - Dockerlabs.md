@@ -1,6 +1,16 @@
+![Screenshot](/medium/dance-samba/Images/machine.png)
 
 Difficulty: **medium**
+
 Made by: **d1se0**
+
+# Steps to pwn 🥽
+
+* 👁️  [Reconnaissance](#reconnaissance)
+* 🪓 [Exploitation](#exploitation)
+* 🚩 [Privilege Escalation](#privilege-escalation)
+
+---
 
 First of all we make sure the machine is up, we can do it with the command **ping**.
 
