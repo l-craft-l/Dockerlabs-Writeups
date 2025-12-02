@@ -1,6 +1,6 @@
 ![Screenshot](/hard/SocialHub/Images/machine.png)
 
-Difficulty: **medium**
+Difficulty: **hard**
 
 Made by: **El pinguino de mario**
 
