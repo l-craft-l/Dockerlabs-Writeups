@@ -1,4 +1,4 @@
-![Screenshot](/medium/SocialHub/Images/machine.png)
+![Screenshot](/hard/SocialHub/Images/machine.png)
 
 Difficulty: **medium**
 
@@ -110,25 +110,25 @@ With this command we convert the xml file to a html file, now let's open it.
 
 And we can see this:
 
-![Screenshot](/medium/SocialHub/Images/image1.png)
+![Screenshot](/hard/SocialHub/Images/image1.png)
 
 As we can see here it's more pretty and also more readable.
 
 And we got that the port 5000 is a website, let's take a look with our browser.
 
-![Screenshot](/medium/SocialHub/Images/image2.png)
+![Screenshot](/hard/SocialHub/Images/image2.png)
 
 We can see this, and also a hint that this website is vulnerable to **stored XSS** through a file **SVG**.
 
 But first let's make an account.
 
-![Screenshot](/medium/SocialHub/Images/image3.png)
+![Screenshot](/hard/SocialHub/Images/image3.png)
 
 We can see when we login, it show us another hint, it seems the user **admin** in a time checks our profile. So we need to upload a SVG file with a script XSS inside of it.
 
 So let's change our profile picture, to upload a SVG file.
 
-![Screenshot](/medium/SocialHub/Images/image4.png)
+![Screenshot](/hard/SocialHub/Images/image4.png)
 
 Okay now it's obvious that we can upload this type of file, first I am going to make a script that shows a window alert.
 
@@ -144,7 +144,7 @@ alert("funny :3")
 
 Okay so when we upload this we can see a window alert on the website.
 
-![Screenshot](/medium/SocialHub/Images/image5.png)
+![Screenshot](/hard/SocialHub/Images/image5.png)
 
 And we got a exploit to do some **cookie hijacking** to the admin, and taking advantage that the admin check our profile.
 
@@ -224,11 +224,11 @@ So we got our own cookie, but also of the user admin!
 
 Okay so let's copy the cookie of the user admin and change it our own replacing it.
 
-![Screenshot](/medium/SocialHub/Images/image6.png)
+![Screenshot](/hard/SocialHub/Images/image6.png)
 
 So once we change it and reload the website and we can be as the user admin!
 
-![Screenshot](/medium/SocialHub/Images/image7.png)
+![Screenshot](/hard/SocialHub/Images/image7.png)
 
 So we got the credentials to login with ssh!
 

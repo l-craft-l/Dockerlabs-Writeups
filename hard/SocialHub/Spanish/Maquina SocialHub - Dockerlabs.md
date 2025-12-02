@@ -1,4 +1,4 @@
-![Screenshot](/medium/SocialHub/Images/machine.png)
+![Screenshot](/hard/SocialHub/Images/machine.png)
 
 Dificultad: **media**
 
@@ -110,25 +110,25 @@ Con este comando convertimos el archivo xml a un archivo html, ahora abriémoslo
 
 Y podemos ver esto:
 
-![Screenshot](/medium/SocialHub/Images/image1.png)
+![Screenshot](/hard/SocialHub/Images/image1.png)
 
 Como podemos ver aquí es más bonito y también más legible.
 
 Y tenemos que el puerto 5000 es un sitio web, veamoslo con nuestro navegador.
 
-![Screenshot](/medium/SocialHub/Images/image2.png)
+![Screenshot](/hard/SocialHub/Images/image2.png)
 
 Podemos ver esto, y también una pista de que este sitio web es vulnerable a **stored XSS** a través de un archivo **SVG**.
 
 Pero primero hagamos una cuenta.
 
-![Screenshot](/medium/SocialHub/Images/image3.png)
+![Screenshot](/hard/SocialHub/Images/image3.png)
 
 Podemos ver cuando nos logueamos, nos muestra otra pista, parece que el usuario **admin** en un momento revisa nuestro perfil. Entonces necesitamos subir un archivo SVG con un script XSS dentro de él.
 
 Entonces cambiemos nuestra imagen de perfil, para subir un archivo SVG.
 
-![Screenshot](/medium/SocialHub/Images/image4.png)
+![Screenshot](/hard/SocialHub/Images/image4.png)
 
 Okay ahora es obvio que podemos subir este tipo de archivo, primero haré un script que muestre una ventana de alerta.
 
@@ -144,7 +144,7 @@ alert("funny :3")
 
 Okay así cuando lo subimos podemos ver una ventana de alerta en el sitio web.
 
-![Screenshot](/medium/SocialHub/Images/image5.png)
+![Screenshot](/hard/SocialHub/Images/image5.png)
 
 Y tenemos una explotación para hacer algún **robo de cookies** al admin, aprovechando que el admin revise nuestro perfil.
 
@@ -224,11 +224,11 @@ Así que conseguimos nuestra propia cookie, ¡pero también la del usuario admin
 
 Okay así que copiemos la cookie del usuario admin y la cambiemos por la nuestra.
 
-![Screenshot](/medium/SocialHub/Images/image6.png)
+![Screenshot](/hard/SocialHub/Images/image6.png)
 
 Así que una vez que la cambiamos y recargamos el sitio web y podemos ser el usuario admin!
 
-![Screenshot](/medium/SocialHub/Images/image7.png)
+![Screenshot](/hard/SocialHub/Images/image7.png)
 
 Así que conseguimos las credenciales para iniciar sesión con ssh!
 
