@@ -7,9 +7,9 @@ Creado por: **Pyth0nK1d**
 # Pasos para comprometer el sistema 🥽
 
 * 👁️  [Reconocimiento](#reconocimiento)
-* 🔍 [Enumeración](#enumeracion)
-* 🪓 [Explotación](#explotacion)
-* 🚩 [Escalada de privilegios](#privilege-escalation)
+* 🔍 [Enumeración](#enumeración)
+* 🪓 [Explotación](#explotación)
+* 🚩 [Escalada de privilegios](#escalada-de-privilegios)
 
 ---
 
