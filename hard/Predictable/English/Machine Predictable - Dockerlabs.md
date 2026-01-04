@@ -203,9 +203,9 @@ This means if we know the value of the **Seed**, the values of **A**, **C** and 
 
 The formula of a **LCG** is basically this:
 
-$$
+```math
 X_n+_1 = \ (a \cdot Xn + c) \ mod \ m
-$$
+```
 In python representation:
 
 ```python
@@ -263,9 +263,9 @@ How to get the Multiplier first?
 
 Exists a lot of steps to get these values, but i'm going to use the direct method, this is the formula:
 
-$$
+```math
 Multiplier = (r_3 - r_2) \cdot (r_2 - r_1)^{-1} \ mod \ m
-$$
+```
 In python representation:
 
 ```python
@@ -282,9 +282,9 @@ So we need at least 3 results, by luck of us we got even 99 results, so this is 
 
 And lastly to get the Increment is a simple formula that's the next one:
 
-$$
+```math
 Increment = (r_2 - r_1 \ \cdot multiplier) \ mod \ modulus
-$$
+```
 
 In python representation:
 
