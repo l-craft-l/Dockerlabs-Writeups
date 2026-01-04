@@ -204,9 +204,9 @@ Esto significa que si conocemos el valor de la **Semilla**, los valores de **A**
 
 La fórmula de un **LCG** es básicamente esta:
 
-$$
+```math
 X_n+_1 = \ (a \cdot Xn + c) \ mod \ m
-$$
+```
 En representación de Python:
 
 ```python
@@ -265,9 +265,9 @@ Hay un método para obtener primero el **Multiplicador** y luego, si obtenemos e
 
 Existen muchos pasos para obtener estos valores, pero voy a usar el método directo, esta es la fórmula:
 
-$$
+```math
 Multiplier = (r_3 - r_2) \cdot (r_2 - r_1)^{-1} \ mod \ m
-$$
+```
 En representación de Python:
 
 ```python
@@ -284,9 +284,9 @@ Así que necesitamos al menos 3 resultados, por suerte tenemos incluso 99 result
 
 Y por último, para obtener el **Incremento**, hay una fórmula simple:
 
-$$
+```math
 Increment = (r_2 - r_1 \ \cdot multiplier) \ mod \ modulus
-$$
+```
 
 En representación de Python:
 
