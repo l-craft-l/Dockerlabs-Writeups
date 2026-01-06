@@ -7,10 +7,10 @@ Hecho por: **maciiii____**
 # Pasos para comprometer el sistema 🥽
 
 * 👁️  [Reconocimiento](#reconocimiento)
-* 🔍 [Enumeración](#enumeracion)
-* 🪓 [Explotación](#explotacion)
-* ⤵️  [Movimiento lateral](#lateral-movement)
-* 🚩 [Escalada de privilegios](#privilege-escalation)
+* 🔍 [Enumeración](#enumeración)
+* 🪓 [Explotación](#explotación)
+* ⤵️  [Movimiento lateral](#movimiento-lateral)
+* 🚩 [Escalada de privilegios](#escalada-de-privilegios)
 
 ---
 
@@ -37,7 +37,7 @@ Ahora podemos comenzar con la fase de **reconocimiento**.
 
 ---
 
-## 🛠️ Reconocimiento
+# Reconocimiento
 
 Comenzamos con **nmap** para conocer qué puertos están abiertos en la máquina objetivo.
 
@@ -122,7 +122,7 @@ Podemos ver que parece que nuestro nombre se ha guardado en algún lugar, así q
 
 ---
 
-## 🔍 Enumeración
+# Enumeración
 
 Vamos a usar **gobuster** para buscar posibles directorios y archivos.
 
@@ -212,7 +212,7 @@ Y sí, podemos ver que podemos ejecutar comandos, así que voy a crear un script
 
 ---
 
-## 🪓 Explotación
+# Explotación
 
 Necesitamos saber cómo se envía la información, así que voy a echar un vistazo al código fuente del sitio web.
 
@@ -442,7 +442,7 @@ Y finalmente se ve mucho mejor!
 
 ---
 
-## ⤵️ Movimiento lateral
+# Movimiento lateral
 
 Después de muchos intentos para intentar escalar privilegios, podemos encontrar que existe algo interesante en el directorio **/opt/**
 
