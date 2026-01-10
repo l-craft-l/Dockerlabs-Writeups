@@ -436,7 +436,7 @@ Y los **NOPS** son básicamente una serie de bytes que son **no operación** est
 
 Lo voy a hacer un diagrama con **excalidraw** para mostrar como funciona este exploit.
 
-![Screenshot](/hard/Spain/Images/image7.png)
+![Screenshot](/hard/Spain/Images/image7es.png)
 
 Bien, así que vamos a hacer un **netcat** listener para recibir el shell.
 
@@ -581,7 +581,7 @@ Así que voy a hacer un script de python para hacer todo esto por nosotros.
 
 Y voy a hacer un diagrama del script de python que es vulnerable con **excalidraw**
 
-![Screenshot](/hard/Spain/Images/image9.png)
+![Screenshot](/hard/Spain/Images/image9es.png)
 
 Espero que puedas entenderlo con este diagrama...
 
