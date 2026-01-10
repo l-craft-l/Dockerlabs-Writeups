@@ -8,7 +8,7 @@ Hecho por: **darksblack**
 
 * 👁️  [Reconocimiento](#reconocimiento)
 * 🔍 [Enumeración](#enumeración)
-* 🪓 [Explotación](#exploitación)
+* 🪓 [Explotación](#explotación)
 * ⤵️  [Movimiento Lateral](#movimiento-lateral)
 * 🚩 [Escalada de Privilegios](#escalada-de-privilegios)
 
@@ -144,7 +144,7 @@ Así que echemos un vistazo con el navegador.
 Podemos ver esto, este sitio web usa php, y después de mirar en el código fuente, no encontramos nada interesante aquí.
 
 ---
- Enumeración
+# Enumeración
 
 Podemos usar **gobuster** para intentar encontrar posibles archivos o directorios en el sitio web.
 
