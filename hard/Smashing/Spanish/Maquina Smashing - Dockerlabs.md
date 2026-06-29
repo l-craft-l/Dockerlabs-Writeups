@@ -1,8 +1,8 @@
 ![Screenshot](/hard/Smashing/Images/machine.png)
 
-Dificultad: **Hard** (Difícil)
+Dificultad: **Dificil**
 
-Realizado por: **Darksblack**
+Hecho por: **Darksblack**
 
 ---
 # Pasos para comprometer la máquina 🥽:
@@ -578,6 +578,8 @@ Chocolate.1704
 ```
 
 Si no entiendes lo que hicimos, hice una animación para entender todo lo que hicimos con el binario.
+
+https://github.com/user-attachments/assets/b3448005-cba8-4e27-bf8c-f7dc1c4a824e
 
 Y podemos ver una posible contraseña, quizás podemos hacer fuerza bruta con los usuarios que obtuvimos antes (darksblack, flypsi) e iniciar sesión en ssh.
 

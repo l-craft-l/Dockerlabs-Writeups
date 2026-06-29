@@ -579,6 +579,8 @@ Chocolate.1704
 
 If you don't understand what we did, I make an animation to understand all what we did with the binary.
 
+https://github.com/user-attachments/assets/b3448005-cba8-4e27-bf8c-f7dc1c4a824e
+
 And we can see a possible password, maybe we can brute force this with the users that we got before (darksblack, flypsi) and login to ssh
 
 After trying so much things, the correct user for login with ssh is flipsy, I don't know why is in this way, probably a misspelling or something like that.
