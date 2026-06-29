@@ -577,9 +577,7 @@ After trying multiple ciphers and encoders I found that this string is in base58
 Chocolate.1704
 ```
 
-If you don't understand what we did, I make an animation to understan all what we did with the binary.
-
-<video src="/hard/Smashing/Images/AssemblyExecution.mp4" autoplay loop muted playsinline width="100%">
+If you don't understand what we did, I make an animation to understand all what we did with the binary.
 
 And we can see a possible password, maybe we can brute force this with the users that we got before (darksblack, flypsi) and login to ssh
 
@@ -676,14 +674,14 @@ Now let's do a treatment of this ugly terminal.
 First of all we do this:
 
 ```r
-script /dev/null -c bash
-script /dev/null -c bash
+script /dev/null -c sh
+script /dev/null -c sh
 Script started, output log file is '/dev/null'.
 ```
 
-This command makes a new bash session with **script** and **/dev/null** as the output file, because script register every command we execute in a log, but with /dev/null path, we make that log can't record commands, and **-c bash** makes script to run the shell with bash.
+This command makes a new sh session with **script** and **/dev/null** as the output file, because script register every command we execute in a log, but with /dev/null path, we make that log can't record commands, and **-c sh** makes script to run the shell with sh.
 
-We do this because we want to use CTRL + C and more functions of bash.
+We do this because we want to use CTRL + C and more functions of sh.
 
 When we execute this, we suspend our reverse shell for a moment with CTRL + Z.
 

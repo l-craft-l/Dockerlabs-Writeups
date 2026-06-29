@@ -579,8 +579,6 @@ Chocolate.1704
 
 Si no entiendes lo que hicimos, hice una animación para entender todo lo que hicimos con el binario.
 
-<video src="/hard/Smashing/Images/AssemblyExecution.mp4" autoplay loop muted playsinline width="100%">
-
 Y podemos ver una posible contraseña, quizás podemos hacer fuerza bruta con los usuarios que obtuvimos antes (darksblack, flypsi) e iniciar sesión en ssh.
 
 Después de probar muchas cosas, el usuario correcto para iniciar sesión con ssh es `flipsy`, no sé por qué es de esta manera, probablemente un error tipográfico o algo así.
@@ -677,14 +675,14 @@ Ahora hagamos un tratamiento de esta terminal fea.
 Primero hacemos esto:
 
 ```r
-script /dev/null -c bash
-script /dev/null -c bash
+script /dev/null -c sh
+script /dev/null -c sh
 Script started, output log file is '/dev/null'.
 ```
 
-Este comando hace una nueva sesión bash con **script** y **/dev/null** como archivo de salida, porque script registra cada comando que ejecutamos en un log, pero con la ruta /dev/null, hacemos que ese log no pueda registrar comandos, y `-c bash` hace que script ejecute la shell con bash.
+Este comando hace una nueva sesión sh con **script** y **/dev/null** como archivo de salida, porque script registra cada comando que ejecutamos en un log, pero con la ruta /dev/null, hacemos que ese log no pueda registrar comandos, y `-c sh` hace que script ejecute la shell con sh.
 
-Hacemos esto porque queremos usar CTRL + C y más funciones de bash.
+Hacemos esto porque queremos usar CTRL + C y más funciones de sh.
 
 Cuando ejecutamos esto, suspendemos nuestra reverse shell por un momento con CTRL + Z.
 
